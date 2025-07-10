@@ -7,7 +7,7 @@
     <div class="bg-white rounded-lg shadow-xl p-8 mb-8">
         <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
             <div class="flex-shrink-0">
-                <img src="{{ $employee->photo_path ?: 'https://via.placeholder.com/200/000000/FFFFFF?text=Sin+Foto' }}" alt="{{ $employee->first_name }} {{ $employee->last_name }}" class="w-48 h-48 rounded-full object-cover object-center border-4 border-blue-200 shadow-md">
+                <img src="{{ $employee->photo_path ? asset('storage/' . $employee->photo_path) : asset('user.png') }}" alt="{{ $employee->first_name }} {{ $employee->last_name }}" class="w-48 h-48 rounded-full object-cover object-center border-4 border-blue-200 shadow-md">
             </div>
             <div class="flex-grow text-center md:text-left">
                 <h1 class="text-4xl font-extrabold text-gray-900 mb-2">{{ $employee->first_name }} {{ $employee->last_name }}</h1>
